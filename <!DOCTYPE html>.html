@@ -1,0 +1,1415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Find NHS Pay Bands 2023/24</title>
+    <link href=ico.ico rel="shortcut icon" type=image/x-icon>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pay bands for NHS staff to see the next increment or years pay of employment, plus an estimated calculation of tax, national insurance and pension contributions.">
+    <meta name=theme-color content="#033942">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+   
+    </div>
+    <div class="container">
+        <div class="row well">
+            <div class="col-sm-4">
+                <h2 class="text-center">Select Bands</h2>
+                <label style="text-align: center;display: block;font-weight: normal;line-height: 150%;" for="selectBand">Select band or view all</label>
+                <form>
+                    <div class="form-group">
+                        <select class="form-control" id="selectBand">
+                            <option value="all">View All</option>
+                            <option value="2">Band 2</option>
+                            <option value="3">Band 3</option>
+                            <option value="4">Band 4</option>
+                            <option value="5">Band 5</option>
+                            <option value="6">Band 6</option>
+                            <option value="7">Band 7</option>
+                            <option value="8a">Band 8a</option>
+                            <option value="8b">Band 8b</option>
+                            <option value="8c">Band 8c</option>
+                            <option value="8d">Band 8d</option>
+                            <option value="9">Band 9</option>
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="col-sm-4">
+                <h2 class="text-center">Select Years</h2>
+                <p class="text-center">2023-24 is the current year</p>
+                <form class="text-center">
+                    <span class="visible-xs"></span>&nbsp;
+                    <label class="checkbox-inline">
+                        <input id="21to22" type="checkbox" value="" style="-ms-transform: scale(1.3); -moz-transform: scale(1.3); -webkit-transform: scale(1.3); -o-transform: scale(1.3); padding: 10px;"> 2021-22
+                    </label>
+                    <span class="visible-xs" style="height:10px"></span>&nbsp;
+                    <label class="checkbox-inline">
+                        <input id="22to23" type="checkbox" value="" style="-ms-transform: scale(1.3); -moz-transform: scale(1.3); -webkit-transform: scale(1.3); -o-transform: scale(1.3); padding: 10px;"> 2022-23
+                    </label>
+                    <span class="visible-xs" style="height:10px"></span>&nbsp;
+                    <label class="checkbox-inline">
+                        <input id="23to24" type="checkbox" value="" style="-ms-transform: scale(1.3); -moz-transform: scale(1.3); -webkit-transform: scale(1.3); -o-transform: scale(1.3); padding: 10px;" checked> 2023-24
+                    </label>
+                </form>
+                <p class="text-center">&nbsp;<span id="errorYearSelection" class="text-center" style="color:red;display:none;">One or more years must be selected</span>&nbsp;</p>
+            </div>
+            <div class="col-sm-4">
+                <h2 class="text-center">Next Change</h2>
+                <p class="text-center">Pay scales change 1st of April<br>Next change in <span id="time"></span> days</p>
+            </div>
+        </div>
+        </div>
+<div class="container">
+   <div class="row">
+      <div class="col-sm-12">
+         <div id="band-2" class="band2 bands">
+            <h3 style="color:#033942;font-weight:bold;">Band 2</h3>
+            <p>Band 2 staff include healthcare assistants, receptionists, phlebotomists, administrative staff, domestic staff and catering staff.</p>
+            <div class="table-responsive">
+               <table class="table table-bordered table-hover text-center table-condensed">
+                  <thead style="color:white;">
+                     <tr class="visible-lg visible-md" style="background-color:#033942;">
+                        <th style="border-color:#033942;" class="text-center">Years Experience</th>
+                        <th style="border-color:#033942;display:none;" class="21to22 text-center">2021-22</th>
+                        <th style="border-color:#033942;display:none;" class="21to22 text-center">2021-22 Deductions</th>
+                        <th style="border-color:#033942;display:none;" class="22to23 text-center">2022-23</th>
+                        <th style="border-color:#033942;display:none;" class="22to23 text-center">2022-23 Deductions</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24 Deductions</th>
+                     </tr>
+                     <tr class="visible-xs visible-sm" style="background-color:#033942;">
+                        <th style="border-color:#033942;" class="text-center">Years<br>Exp</th>
+                        <th style="border-color:#033942;display:none;" class="21to22 text-center">2021-22<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;display:none;" class="21to22 text-center">2021-22<br>Deductions</th>
+                        <th style="border-color:#033942;display:none;" class="22to23 text-center">2022-23<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;display:none;" class="22to23 text-center">2022-23<br>Deductions</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24<br>Deductions</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>0-2</td>
+                        <td class="21to22" style="display: none;">£18,546</td>
+                        <td class="21to22" style="display: none;"><button type="button" class="btn btn-primary btn-xs getSixth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="22to23" style="display: none;">£20,270</td>
+                        <td class="22to23" style="display: none;"><button type="button" class="btn btn-primary btn-xs getEighth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="23to24">£22,383</td>
+                        <td class="23to24"><button type="button" class="btn btn-primary btn-xs getTenth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                     </tr>
+                     <tr>
+                         <td>2+</td>
+                         <td class="21to22" style="display: none;">£19,918</td>
+                         <td class="21to22" style="display: none;"><button type="button" class="btn btn-primary btn-xs getSixth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                         <td class="22to23" style="display: none;">£21,318</td>
+                         <td class="22to23" style="display: none;"><button type="button" class="btn btn-primary btn-xs getEighth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                         <td class="23to24">£22,383</td>
+                         <td class="23to24"><button type="button" class="btn btn-primary btn-xs getTenth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <div id="band-3" class="band3 bands">
+            <h3 style="color:#033942;font-weight:bold;">Band 3</h3>
+            <p>Band 3 staff include clinical support workers, therapy assistants, pharmacy assistants, administrative workers and clerical staff.</p>
+            <div class="table-responsive">
+               <table class="table table-bordered table-hover text-center table-condensed">
+                  <thead style="color:white;">
+                     <tr class="visible-lg visible-md" style="background-color:#033942;">
+                        <th style="border-color:#033942;" class="text-center">Years Experience</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22 Deductions</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23 Deductions</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24 Deductions</th>
+                     </tr>
+                     <tr class="visible-xs visible-sm" style="background-color:#033942;">
+                        <th style="border-color:#033942;" class="text-center">Years<br>Exp</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22<br>Deductions</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23<br>Deductions</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24<br>Deductions</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>0-2</td>
+                        <td class="21to22" style="display: none;">£20,330</td>
+                        <td class="21to22" style="display: none;"><button type="button" class="btn btn-primary btn-xs getSixth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="22to23" style="display: none;">£21,730</td>
+                        <td class="22to23" style="display: none;"><button type="button" class="btn btn-primary btn-xs getEighth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="23to24">£22,816</td>
+                        <td class="23to24"><button type="button" class="btn btn-primary btn-xs getTenth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                     </tr>
+                     <tr>
+                        <td>2+</td>
+                        <td class="21to22" style="display: none;">£21,777</td>
+                        <td class="21to22" style="display: none;"><button type="button" class="btn btn-primary btn-xs getSixth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="22to23" style="display: none;">£23,177</td>
+                        <td class="22to23" style="display: none;"><button type="button" class="btn btn-primary btn-xs getEighth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="23to24">£24,336</td>
+                        <td class="23to24"><button type="button" class="btn btn-primary btn-xs getTenth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <div id="band-4" class="band4 bands">
+            <h3 style="color:#033942;font-weight:bold;">Band 4</h3>
+            <p>Band 4 staff include nursing associates, associate practitioners, pharmacy technicians, bed managers and senior clerical staff.</p>
+            <div class="table-responsive">
+               <table class="table table-bordered table-hover text-center table-condensed">
+                  <thead style="color:white;">
+                     <tr class="visible-lg visible-md" style="background-color:#033942;">
+                        <th style="border-color:#033942;" class="text-center">Years Experience</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22 Deductions</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23 Deductions</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24 Deductions</th>
+                     </tr>
+                     <tr class="visible-xs visible-sm" style="background-color:#033942;">
+                        <th style="border-color:#033942;" class="text-center">Years<br>Exp</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22<br>Deductions</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23<br>Deductions</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24<br>Deductions</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>0-3</td>
+                        <td class="21to22" style="display: none;">£22,549</td>
+                        <td class="21to22" style="display: none;"><button type="button" class="btn btn-primary btn-xs getSixth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="22to23" style="display: none;">£23,949</td>
+                        <td class="22to23" style="display: none;"><button type="button" class="btn btn-primary btn-xs getEighth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="23to24">£25,147</td>
+                        <td class="23to24"><button type="button" class="btn btn-primary btn-xs getTenth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                     </tr>
+                     <tr>
+                        <td>3+</td>
+                        <td class="21to22" style="display: none;">£24,882</td>
+                        <td class="21to22" style="display: none;"><button type="button" class="btn btn-primary btn-xs getSixth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="22to23" style="display: none;">£26,282</td>
+                        <td class="22to23" style="display: none;"><button type="button" class="btn btn-primary btn-xs getEighth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="23to24">£27,596</td>
+                        <td class="23to24"><button type="button" class="btn btn-primary btn-xs getTenth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <div id="band-5" class="band5 bands">
+            <h3 style="color:#033942;font-weight:bold;">Band 5</h3>
+            <p>Band 5 staff include nurses, newly qualified midwives, paramedics, physiotherapists, occupational therapists and speech therapists.</p>
+            <div class="table-responsive">
+               <table class="table table-bordered table-hover text-center table-condensed">
+                  <thead style="color:white;">
+                     <tr class="visible-lg visible-md" style="background-color:#033942;">
+                        <th style="border-color:#033942;" class="text-center">Years Experience</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22 Deductions</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23 Deductions</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24 Deductions</th>
+                     </tr>
+                     <tr class="visible-xs visible-sm" style="background-color:#033942;">
+                        <th style="border-color:#033942;" class="text-center">Years<br>Exp</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22<br>Deductions</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23<br>Deductions</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24<br>Deductions</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>0-2</td>
+                        <td class="21to22" style="display: none;">£25,655</td>
+                        <td class="21to22" style="display: none;"><button type="button" class="btn btn-primary btn-xs getSixth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="22to23" style="display: none;">£27,055</td>
+                        <td class="22to23" style="display: none;"><button type="button" class="btn btn-primary btn-xs getEighth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="23to24">£28,407</td>
+                        <td class="23to24"><button type="button" class="btn btn-primary btn-xs getTenth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                     </tr>
+                     <tr>
+                        <td>2-4</td>
+                        <td class="21to22" style="display: none;">£27,780</td>
+                        <td class="21to22" style="display: none;"><button type="button" class="btn btn-primary btn-xs getSixth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="22to23" style="display: none;">£29,180</td>
+                        <td class="22to23" style="display: none;"><button type="button" class="btn btn-primary btn-xs getEighth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="23to24">£30,639</td>
+                        <td class="23to24"><button type="button" class="btn btn-primary btn-xs getTenth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                     </tr>
+                     <tr>
+                        <td>4+</td>
+                        <td class="21to22" style="display: none;">£31,534</td>
+                        <td class="21to22" style="display: none;"><button type="button" class="btn btn-primary btn-xs getSixth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="22to23" style="display: none;">£32,934</td>
+                        <td class="22to23" style="display: none;"><button type="button" class="btn btn-primary btn-xs getEighth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="23to24">£34,581</td>
+                        <td class="23to24"><button type="button" class="btn btn-primary btn-xs getTenth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <div id="band-6" class="band6 bands">
+            <h3 style="color:#033942;font-weight:bold;">Band 6</h3>
+            <p>Band 6 staff include junior sisters, charge nurses, midwives, paramedics, newly-qualified pharmacists and biomedical scientists.</p>
+            <div class="table-responsive">
+               <table class="table table-bordered table-hover text-center table-condensed">
+                  <thead style="color:white;">
+                     <tr class="visible-lg visible-md" style="background-color:#033942;">
+                     	<th style="border-color:#033942;" class="text-center">Years Experience</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22 Deductions</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23 Deductions</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24 Deductions</th>
+                     </tr>
+                     <tr class="visible-xs visible-sm" style="background-color:#033942;">
+                        <th style="border-color:#033942;" class="text-center">Years<br>Exp</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22<br>Deductions</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23<br>Deductions</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24<br>Deductions</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>0-2</td>
+                        <td class="21to22" style="display: none;">£32,306</td>
+                        <td class="21to22" style="display: none;"><button type="button" class="btn btn-primary btn-xs getSixth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="22to23" style="display: none;">£33,706</td>
+                        <td class="22to23" style="display: none;"><button type="button" class="btn btn-primary btn-xs getEighth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="23to24">£35,392</td>
+                        <td class="23to24"><button type="button" class="btn btn-primary btn-xs getTenth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                     </tr>
+                     <tr>
+                        <td>2-5</td>
+                        <td class="21to22" style="display: none;">£34,172</td>
+                        <td class="21to22" style="display: none;"><button type="button" class="btn btn-primary btn-xs getSixth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="22to23" style="display: none;">£35,572</td>
+                        <td class="22to23" style="display: none;"><button type="button" class="btn btn-primary btn-xs getEighth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="23to24">£37,350</td>
+                        <td class="23to24"><button type="button" class="btn btn-primary btn-xs getTenth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                     </tr>
+                     <tr>
+                        <td>5+</td>
+                        <td class="21to22" style="display: none;">£39,027</td>
+                        <td class="21to22" style="display: none;"><button type="button" class="btn btn-primary btn-xs getSixth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="22to23" style="display: none;">£40,588</td>
+                        <td class="22to23" style="display: none;"><button type="button" class="btn btn-primary btn-xs getEighth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="23to24">£42,618</td>
+                        <td class="23to24"><button type="button" class="btn btn-primary btn-xs getTenth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <div id="band-7" class="band7 bands">
+            <h3 style="color:#033942;font-weight:bold;">Band 7</h3>
+            <p>Band 7 staff include ward sisters, charge nurses, senior physiotherapists, occupational therapists, pharmacists and senior midwives.</p>
+            <div class="table-responsive">
+               <table class="table table-bordered table-hover text-center table-condensed">
+                  <thead style="color:white;">
+                     <tr class="visible-lg visible-md" style="background-color:#033942;">
+                        <th style="border-color:#033942;" class="text-center">Years Experience</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22 Deductions</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23 Deductions</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24 Deductions</th>
+                     </tr>
+                     <tr class="visible-xs visible-sm" style="background-color:#033942;">
+                        <th style="border-color:#033942;" class="text-center">Years<br>Exp</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22<br>Deductions</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23<br>Deductions</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24<br>Deductions</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>0-2</td>
+                        <td class="21to22" style="display: none;">£40,057</td>
+                        <td class="21to22" style="display: none;"><button type="button" class="btn btn-primary btn-xs getSixth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="22to23" style="display: none;">£41,659</td>
+                        <td class="22to23" style="display: none;"><button type="button" class="btn btn-primary btn-xs getEighth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="23to24">£43,742</td>
+                        <td class="23to24"><button type="button" class="btn btn-primary btn-xs getTenth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                     </tr>
+                     <tr>
+                        <td>2-5</td>
+                        <td class="21to22" style="display: none;">£42,121</td>
+                        <td class="21to22" style="display: none;"><button type="button" class="btn btn-primary btn-xs getSixth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="22to23" style="display: none;">£43,806</td>
+                        <td class="22to23" style="display: none;"><button type="button" class="btn btn-primary btn-xs getEighth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="23to24">£45,996</td>
+                        <td class="23to24"><button type="button" class="btn btn-primary btn-xs getTenth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                     </tr>
+                     <tr>
+                        <td>5+</td>
+                        <td class="21to22" style="display: none;">£45,839</td>
+                        <td class="21to22" style="display: none;"><button type="button" class="btn btn-primary btn-xs getSixth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="22to23" style="display: none;">£47,672</td>
+                        <td class="22to23" style="display: none;"><button type="button" class="btn btn-primary btn-xs getEighth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="23to24">£50,056</td>
+                        <td class="23to24"><button type="button" class="btn btn-primary btn-xs getTenth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <div id="band-8a" class="band8a bands">
+            <h3 style="color:#033942;font-weight:bold;">Band 8a</h3>
+            <p>Band 8a staff include matrons, advanced clinical practitioners, service managers and speciality leads.</p>
+            <div class="table-responsive">
+               <table class="table table-bordered table-hover text-center table-condensed">
+                  <thead style="color:white;">
+                     <tr class="visible-lg visible-md" style="background-color:#033942;">
+                        <th style="border-color:#033942;" class="text-center">Years Experience</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22 Deductions</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23 Deductions</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24 Deductions</th>
+                     </tr>
+                     <tr class="visible-xs visible-sm" style="background-color:#033942;">
+                        <th style="border-color:#033942;" class="text-center">Years<br>Exp</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22<br>Deductions</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23<br>Deductions</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24<br>Deductions</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>0-5</td>
+                        <td class="21to22" style="display: none;">£47,126</td>
+                        <td class="21to22" style="display: none;"><button type="button" class="btn btn-primary btn-xs getSixth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="22to23" style="display: none;">£48,526</td>
+                        <td class="22to23" style="display: none;"><button type="button" class="btn btn-primary btn-xs getEighth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="23to24">£50,952</td>
+                        <td class="23to24"><button type="button" class="btn btn-primary btn-xs getTenth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                     </tr>
+                     <tr>
+                        <td>5+</td>
+                        <td class="21to22" style="display: none;">£53,219</td>
+                        <td class="21to22" style="display: none;"><button type="button" class="btn btn-primary btn-xs getSixth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="22to23" style="display: none;">£54,619</td>
+                        <td class="22to23" style="display: none;"><button type="button" class="btn btn-primary btn-xs getEighth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="23to24">£57,349</td>
+                        <td class="23to24"><button type="button" class="btn btn-primary btn-xs getTenth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <div id="band-8b" class="band8b bands">
+            <h3 style="color:#033942;font-weight:bold;">Band 8b</h3>
+            <p>Band 8b staff include psychologists, lead pharmacists and lead clinicians.</p>
+            <div class="table-responsive">
+               <table class="table table-bordered table-hover text-center table-condensed">
+                  <thead style="color:white;">
+                     <tr class="visible-lg visible-md" style="background-color:#033942;">
+                        <th style="border-color:#033942;" class="text-center">Years Experience</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22 Deductions</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23 Deductions</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24 Deductions</th>
+                     </tr>
+                     <tr class="visible-xs visible-sm" style="background-color:#033942;">
+                        <th style="border-color:#033942;" class="text-center">Years<br>Exp</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22<br>Deductions</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23<br>Deductions</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24<br>Deductions</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>0-5</td>
+                        <td class="21to22" style="display: none;">£54,764</td>
+                        <td class="21to22" style="display: none;"><button type="button" class="btn btn-primary btn-xs getSixth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="22to23" style="display: none;">£56,164</td>
+                        <td class="22to23" style="display: none;"><button type="button" class="btn btn-primary btn-xs getEighth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="23to24">£58,972</td>
+                        <td class="23to24"><button type="button" class="btn btn-primary btn-xs getTenth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                     </tr>
+                     <tr>
+                        <td>5+</td>
+                        <td class="21to22" style="display: none;">£63,862</td>
+                        <td class="21to22" style="display: none;"><button type="button" class="btn btn-primary btn-xs getSixth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="22to23" style="display: none;">£65,262</td>
+                        <td class="22to23" style="display: none;"><button type="button" class="btn btn-primary btn-xs getEighth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="23to24">£68,525</td>
+                        <td class="23to24"><button type="button" class="btn btn-primary btn-xs getTenth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <div id="band-8c" class="band8c bands">
+            <h3 style="color:#033942;font-weight:bold;">Band 8c</h3>
+             <p>Band 8c staff include heads of clinical service, senior HR managers, tactical response leads and service owners</p> 
+            <div class="table-responsive">
+               <table class="table table-bordered table-hover text-center table-condensed">
+                  <thead style="color:white;">
+                     <tr class="visible-lg visible-md" style="background-color:#033942;">
+                        <th style="border-color:#033942;" class="text-center">Years Experience</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22 Deductions</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23 Deductions</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24 Deductions</th>
+                     </tr>
+                     <tr class="visible-xs visible-sm" style="background-color:#033942;">
+                        <th style="border-color:#033942;" class="text-center">Years<br>Exp</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22<br>Deductions</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23<br>Deductions</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24<br>Deductions</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>0-1</td>
+                        <td class="21to22" style="display: none;">£65,664</td>
+                        <td class="21to22" style="display: none;"><button type="button" class="btn btn-primary btn-xs getSixth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="22to23" style="display: none;">£67,064</td>
+                        <td class="22to23" style="display: none;"><button type="button" class="btn btn-primary btn-xs getEighth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="23to24">£70,417</td>
+                        <td class="23to24"><button type="button" class="btn btn-primary btn-xs getTenth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                     </tr>
+                     <tr>
+                        <td>5+</td>
+                        <td class="21to22" style="display: none;">£75,874</td>
+                        <td class="21to22" style="display: none;"><button type="button" class="btn btn-primary btn-xs getSixth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="22to23" style="display: none;">£77,274</td>
+                        <td class="22to23" style="display: none;"><button type="button" class="btn btn-primary btn-xs getEighth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="23to24">£81,138</td>
+                        <td class="23to24"><button type="button" class="btn btn-primary btn-xs getTenth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <div id="band-8d" class="band8d bands">
+            <h3 style="color:#033942;font-weight:bold;">Band 8d</h3>
+            <p>Band 8d staff include deputy directors of clinical services, deputy chief nurse, consultant clinical scientists and departmental heads.</p>
+            <div class="table-responsive">
+               <table class="table table-bordered table-hover text-center table-condensed">
+                  <thead style="color:white;">
+                     <tr class="visible-lg visible-md" style="background-color:#033942;">
+                        <th style="border-color:#033942;" class="text-center">Years Experience</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22 Deductions</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23 Deductions</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24 Deductions</th>
+                     </tr>
+                     <tr class="visible-xs visible-sm" style="background-color:#033942;">
+                        <th style="border-color:#033942;" class="text-center">Years<br>Exp</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22<br>Deductions</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23<br>Deductions</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24<br>Deductions</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>0-5</td>
+                        <td class="21to22" style="display: none;">£78,192</td>
+                        <td class="21to22" style="display: none;"><button type="button" class="btn btn-primary btn-xs getSixth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="22to23" style="display: none;">£79,592</td>
+                        <td class="22to23" style="display: none;"><button type="button" class="btn btn-primary btn-xs getEighth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="23to24">£83,571</td>
+                        <td class="23to24"><button type="button" class="btn btn-primary btn-xs getTenth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                     </tr>
+                     <tr>
+                        <td>5+</td>
+                        <td class="21to22" style="display: none;">£90,387</td>
+                        <td class="21to22" style="display: none;"><button type="button" class="btn btn-primary btn-xs getSixth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="22to23" style="display: none;">£91,787</td>
+                        <td class="22to23" style="display: none;"><button type="button" class="btn btn-primary btn-xs getEighth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="23to24">£96,376</td>
+                        <td class="23to24"><button type="button" class="btn btn-primary btn-xs getTenth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+         <div id="band-9" class="band9 bands">
+            <h3 style="color:#033942;font-weight:bold;">Band 9</h3>
+            <p>Band 9 staff include nurse consultants, director of clinical services and chief nursing officers.</p>
+            <div class="table-responsive">
+               <table class="table table-bordered table-hover text-center table-condensed">
+                  <thead style="color:white;">
+                     <tr class="visible-lg visible-md" style="background-color:#033942;">
+                        <th style="border-color:#033942;" class="text-center">Years Experience</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22 Deductions</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23 Deductions</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24 Deductions</th>
+                     </tr>
+                     <tr class="visible-xs visible-sm" style="background-color:#033942;">
+                        <th style="border-color:#033942;" class="text-center">Years<br>Exp</th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;display: none;" class="21to22 text-center">2021-22<br>Deductions</th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;display: none;" class="22to23 text-center">2022-23<br>Deductions</th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24<br><span class="hidden-sm">Pay</span></th>
+                        <th style="border-color:#033942;" class="23to24 text-center">2023-24<br>Deductions</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>0-5</td>
+                        <td class="21to22" style="display: none;">£93,735</td>
+                        <td class="21to22" style="display: none;"><button type="button" class="btn btn-primary btn-xs getSixth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="22to23" style="display: none;">£95,135</td>
+                        <td class="22to23" style="display: none;"><button type="button" class="btn btn-primary btn-xs getEighth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="23to24">£99,891</td>
+                        <td class="23to24"><button type="button" class="btn btn-primary btn-xs getTenth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                     </tr>
+                     <tr>
+                        <td>5+</td>
+                        <td class="21to22" style="display: none;">£108,075</td>
+                        <td class="21to22" style="display: none;"><button type="button" class="btn btn-primary btn-xs getSixth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="22to23" style="display: none;">£109,475</td>
+                        <td class="22to23" style="display: none;"><button type="button" class="btn btn-primary btn-xs getEighth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                        <td class="23to24">£114,949</td>
+                        <td class="23to24"><button type="button" class="btn btn-primary btn-xs getTenth" data-toggle="modal" data-target="#myModal"><i class="fa fa-calculator"></i> Take Home<span class="hidden-sm hidden-xs"> Pay</span></button></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+          <br>
+          <br>
+      </div>
+   </div>
+</div>
+<div class="container">
+   <!-- Modal -->
+   <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog">
+         <!-- Modal content-->
+         <div class="modal-content">
+            <div class="modal-header" style="background-color: #337AB7;color:white;border-top-right-radius: 5px;border-top-left-radius: 5px">
+               <button type="button" class="close" data-dismiss="modal">&times;</button>
+               <h4 class="modal-title text-center">Calculations</h4>
+            </div>
+            <div class="modal-body">
+               <table class="table">
+                  <thead>
+                     <tr>
+                        <th></th>
+                        <th>Yearly</th>
+                        <th>Monthly</th>
+                        <th style="display:none;">Weekly</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>Gross</td>
+                        <td><span id="grossYearly"></span></td>
+                        <td><span id="grossMonthly"></span></td>
+                        <td style="display:none;"><span id="grossWeekly"></span></td>
+                     </tr>
+                     <tr>
+                        <td><label class="checkbox-inline">
+                           <input id="cbPension" type="checkbox" value="" style="-ms-transform: scale(1.3); -moz-transform: scale(1.3); -webkit-transform: scale(1.3); -o-transform: scale(1.3); padding: 10px;" checked>Pension (<span id="pensionPercentage"></span>%)
+                           </label>
+                           <!--<a type="button" class="btn btn-primary btn-xs" style="border-radius: 100%;display:none;" data-toggle="popover" title="Pension Calculation" data-content="Gross yearly divided by 100 times by the percentage which is based on gross yearly (for example 20,000 / 100 * 5.6 then divided by 12 for monthly... or should it be divide by 52.1429 times by 4) ">?</a>-->
+                        </td>
+                        <td><span id="pensionYear"></span></td>
+                        <td><span id="pensionMonth"></span></td>
+                        <td style="display:none;"><span id="pensionWeek"></span></td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <select name="ddStudentLoan" id="ddStudentLoan">
+                              <option value="noStudentLoan">No Student Loan</option>
+                              <option value="pre2012">Pre 2012 Student Loan</option>
+                              <option value="post2012">Post 2012 Student Loan</option>
+                            </select>
+                        </td>
+                        <td><span id="studentLoanYear">£0</span></td>
+                        <td><span id="studentLoanMonth">£0</span></td>
+                        <td style="display:none;"><span id="studentLoanWeek"></span></td>
+                     </tr>
+                     <tr>
+                        <td>NI (<span id="niRate"></span>)
+                            <!--<a type="button" class="btn btn-primary btn-xs" style="border-radius: 100%;display:none;" data-toggle="popover" title="National Insurance Calculation" data-content="Divide yearly gross by 52.1429 (or should it be 12?) to get the weekly amount, take off 162 as you don't pay anything on the first 162, divide by 100 and times by 12 on the next 730 (162 to 892) if it is there and divide by 100 and times by 2 for the next 108 (got this wrong should be 2% for all future value above this) if it is there times by 52.1429 for yearly and divide that by 12 for monthly https://www.moneyadviceservice.org.uk/en/articles/tax-and-national-insurance-deductions#how-much-can-you-earn-before-you-need-to-pay-national-insurance">?</a>-->
+                        </td>
+                        <td><span id="niYearly"></span></td>
+                        <td><span id="niMonthly"></span></td>
+                        <td style="display:none;"><span id="niWeekly"></span></td>
+                     </tr>
+                     <tr>
+                        <td>Tax (<span id="taxRate"></span>)
+                            <!--<a type="button" class="btn btn-primary btn-xs" style="border-radius: 100%;display:none;" data-toggle="popover" title="Tax Calculation" data-content="Take off pension and national insurance then from this value up to 11,850 pay no tax for the next 34,500 (11,851 to 46,350) divide by 100 times by 20 for the next 103,650 (46,351 to 150,000) divide by 100 times by 40 https://www.moneyadviceservice.org.uk/en/articles/tax-and-national-insurance-deductions#how-much-can-you-earn-before-you-need-to-pay-income-tax">?</a>-->
+                        </td>
+                        <td><span id="taxYearly"></span></td>
+                        <td><span id="taxMonthly"></span></td>
+                        <td style="display:none;"><span id="taxWeekly"></span></td>
+                     </tr>
+                     <tr>
+                        <td>Take-Home</td>
+                        <td><span id="totalYearly"></span></td>
+                        <td><span id="totalMonthly"></span></td>
+                        <td style="display:none;"><span id="totalWeekly"></span></td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+            <div class="modal-footer">
+               <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+<footer class="footer" style="background-color: #E8EDEE;padding-top: 40px;padding-bottom: 40px;">
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script>
+        $(document).ready(function(){
+
+        $('[data-toggle="popover"]').popover(); 
+            
+        var oneDay = 24*60*60*1000; // hours*minutes*seconds*milliseconds
+        var secondDate = new Date(new Date().getFullYear()+1,3,1);//add a year and 3 = April, 1 = 1st... so doing until 2nd as it needs an extra day
+        var firstDate = new Date();
+        //if the days go weird comment out the below if statement
+        //if (secondDate.getTime() > 368) {
+        //    secondDate = new Date(new Date().getFullYear()+0,3,1);
+        //}
+        $("#time").text(Math.round(Math.abs((firstDate.getTime() - secondDate.getTime()) / (oneDay))));
+
+        ////now done with display:none
+        //$(".21to22").hide();
+        //$(".22to23").hide();
+
+        $('#selectBand').change(function () {
+
+            if ($(this).val() == 'all') {
+                $(".bands").hide();
+                $(".bands").fadeIn();
+            }
+
+            if ($(this).val() == '2') {
+                $(".bands").hide();
+                $(".band2").fadeIn();
+            }
+
+            if ($(this).val() == '3') {
+                $(".bands").hide();
+                $(".band3").fadeIn();
+            }
+
+            if ($(this).val() == '4') {
+                $(".bands").hide();
+                $(".band4").fadeIn();
+            }
+
+            if ($(this).val() == '5') {
+                $(".bands").hide();
+                $(".band5").fadeIn();
+            }
+
+            if ($(this).val() == '6') {
+                $(".bands").hide();
+                $(".band6").fadeIn();
+            }
+
+            if ($(this).val() == '7') {
+                $(".bands").hide();
+                $(".band7").fadeIn();
+            }
+
+            if ($(this).val() == '8a') {
+                $(".bands").hide();
+                $(".band8a").fadeIn();
+            }
+
+            if ($(this).val() == '8b') {
+                $(".bands").hide();
+                $(".band8b").fadeIn();
+            }
+
+            if ($(this).val() == '8c') {
+                $(".bands").hide();
+                $(".band8c").fadeIn();
+            }
+
+            if ($(this).val() == '8d') {
+                $(".bands").hide();
+                $(".band8d").fadeIn();
+            }
+
+            if ($(this).val() == '9') {
+                $(".bands").hide();
+                $(".band9").fadeIn();
+            }
+        });
+
+        //Student loan values
+        var pre2012StudentLoanThreshold = 20195;
+        var pre2012StudentLoanPercent = 9;
+        var post2012StudentLoanThreshold = 27295;
+        var post2012StudentLoanPercent = 9;
+        var StudentLoanOverThreshold = 0;
+        var StudentLoanAfterDeductions = 0;
+
+        //start the checkbox with one value checked (the current year)
+        var checked = 1;
+
+        $('#21to22').change(function () {
+            if ($(this).is(':checked')) {
+                $(".21to22").fadeIn("fast");
+                checked = checked + 1;
+            } else {
+                $(".21to22").fadeOut("fast");
+                checked = checked - 1;
+                if (checked == 0)
+                {
+                $('#21to22').prop('checked', true).trigger("change");
+                if ($('#errorYearSelection').is(":hidden"))
+                {
+                    $('#errorYearSelection').fadeIn().delay(5000).fadeOut();
+                }
+                }
+            }
+        })
+
+        $('#22to23').change(function () {
+            if ($(this).is(':checked')) {
+                $(".22to23").fadeIn("fast");
+                checked = checked + 1;
+            } else {
+                $(".22to23").fadeOut("fast");
+                checked = checked - 1;
+                if (checked == 0)
+                {
+                $('#22to23').prop('checked', true).trigger("change");
+                if ($('#errorYearSelection').is(":hidden"))
+                {
+                    $('#errorYearSelection').fadeIn().delay(5000).fadeOut();
+                }
+                }
+            }
+        })
+
+        $('#23to24').change(function () {
+            if ($(this).is(':checked')) {
+                $(".23to24").fadeIn("fast");
+                checked = checked + 1;
+            } else {
+                $(".23to24").fadeOut("fast");
+                checked = checked - 1;
+                if (checked == 0) {
+                    $('#23to24').prop('checked', true).trigger("change");
+                    if ($('#errorYearSelection').is(":hidden")) {
+                        $('#errorYearSelection').fadeIn().delay(5000).fadeOut();
+                    }
+                }
+            }
+        })
+
+        $('#cbPension').change(function () {
+           var takeOffLoan = 0;
+           if ($("#ddStudentLoan").val() == 'pre2012')
+           {
+              ////pre 2012 calc////
+              //takeOffLoan = 60;
+              var getYearWithoutFormat = $("#grossYearly").text();
+              var takeBeforeCalc = parseFloat(getYearWithoutFormat.replace(",","").replace("£",""))
+              if (takeBeforeCalc > pre2012StudentLoanThreshold)
+              {
+                 StudentLoanOverThreshold = takeBeforeCalc - pre2012StudentLoanThreshold;
+                 takeOffLoan = StudentLoanOverThreshold / 100 * pre2012StudentLoanPercent;
+              }
+           }
+           if ($("#ddStudentLoan").val() == 'post2012')
+           {
+              ////post 2012 calc////
+              //takeOffLoan = 120;
+              var getYearWithoutFormat = $("#grossYearly").text();
+              var takeBeforeCalc = parseFloat(getYearWithoutFormat.replace(",","").replace("£",""))
+              if (takeBeforeCalc > post2012StudentLoanThreshold)
+              {
+                 StudentLoanOverThreshold = takeBeforeCalc - post2012StudentLoanThreshold;
+                 takeOffLoan = StudentLoanOverThreshold / 100 * post2012StudentLoanPercent;
+              }
+           }
+            if ($(this).is(':checked')) {
+                $("#pensionYear").css("text-decoration", "none");
+                $("#pensionMonth").css("text-decoration", "none");
+                $("#pensionWeek").css("text-decoration", "none");
+                
+                var getYearWithoutFormat = $("#grossYearly").text();
+                var takeBeforeCalc = parseFloat(getYearWithoutFormat.replace(",","").replace("£",""));
+                //alert(takeBeforeCalc);
+
+                var getYearNiWithoutFormat = $("#niYearly").text();
+                var theYearlyNi = parseFloat(getYearNiWithoutFormat.replace(",","").replace("£","").replace("-",""));
+                //alert(theYearlyNi);
+
+                var getYearPensionWithoutFormat = $("#pensionYear").text();
+                var theYearlyPension = parseFloat(getYearPensionWithoutFormat.replace(",","").replace("£","").replace("-",""));
+                //alert(theYearlyPension);
+
+                var takeMeOff = theYearlyNi;// + theYearlyPension;
+                //alert(takeMeOff);
+
+                //alert(takeBeforeCalc + " + " + takeMeOff);
+                //so now I need to take off the pension second and ni last
+                takeMeOff = takeMeOff + takeOffLoan;
+                CalculateTax(takeBeforeCalc, theYearlyPension, takeMeOff);
+
+            } else {
+                $("#pensionYear").css("text-decoration", "line-through");
+                $("#pensionMonth").css("text-decoration", "line-through");
+                $("#pensionWeek").css("text-decoration", "line-through");
+
+                var getYearWithoutFormat = $("#grossYearly").text();
+                var takeBeforeCalc = parseFloat(getYearWithoutFormat.replace(",","").replace("£",""));
+                //alert(takeBeforeCalc);
+
+                var getYearNiWithoutFormat = $("#niYearly").text();
+                var theYearlyNi = parseFloat(getYearNiWithoutFormat.replace(",","").replace("£","").replace("-",""));
+                //alert(theYearlyNi);
+
+                var takeMeOff = theYearlyNi;
+                //alert(takeMeOff);
+
+                //alert(takeBeforeCalc + " + " + takeMeOff);
+                takeMeOff = takeMeOff + takeOffLoan;
+                CalculateTax(takeBeforeCalc, 0, takeMeOff);
+
+            }
+        })
+
+        $("#ddStudentLoan").change(function () {
+         var loanType = this.value;
+         var takeOffLoan = 0;
+         if (loanType == "noStudentLoan")
+           {
+              $("#studentLoanYear").text("£0");
+              $("#studentLoanMonth").text("£0");
+           }
+           if (loanType == "pre2012")
+           {
+              ////pre 2012 calc////
+              var getYearWithoutFormat = $("#grossYearly").text();
+              var takeBeforeCalc = parseFloat(getYearWithoutFormat.replace(",","").replace("£",""))
+              if (takeBeforeCalc > pre2012StudentLoanThreshold)
+              {
+                 StudentLoanOverThreshold = takeBeforeCalc - pre2012StudentLoanThreshold;
+                 StudentLoanAfterDeductions = StudentLoanOverThreshold / 100 * pre2012StudentLoanPercent;
+              }
+              else
+              {
+                 StudentLoanAfterDeductions = 0;
+              }
+              takeOffLoan = StudentLoanAfterDeductions;
+              var takeOffLoanYearToTwoPlaces = parseFloat(Math.round(takeOffLoan * 100) / 100).toFixed(2);
+              //work out monthly
+            var takeOffLoanMonth = takeOffLoan / 12;
+            var takeOffLoanMonthToTwoPlaces = parseFloat(Math.round(takeOffLoanMonth * 100) / 100).toFixed(2);
+            //set the monthly value with formatting
+            var takeOffLoanMonthWithPound = "-£" + takeOffLoanMonthToTwoPlaces;
+            //var takeOffLoanWithPoundAndComa = takeOffLoanMonthWithPound.slice(0, 2) + "," + takeOffLoanMonthWithPound.slice(2);
+            if (takeOffLoanYearToTwoPlaces != 0)
+            {
+               $("#studentLoanMonth").text(takeOffLoanMonthWithPound);
+               $("#studentLoanYear").text("-£" + takeOffLoanYearToTwoPlaces);
+            }
+            else
+            {
+               $("#studentLoanMonth").text("£0");
+               $("#studentLoanYear").text("£0");
+            }
+           }
+           if (loanType == "post2012")
+           {
+            ////post 2012 calc////
+            var getYearWithoutFormat = $("#grossYearly").text();
+              var takeBeforeCalc = parseFloat(getYearWithoutFormat.replace(",","").replace("£",""))
+              if (takeBeforeCalc > post2012StudentLoanThreshold)
+              {
+                 StudentLoanOverThreshold = takeBeforeCalc - post2012StudentLoanThreshold;
+                 StudentLoanAfterDeductions = StudentLoanOverThreshold / 100 * post2012StudentLoanPercent;
+              }
+              else
+              {
+                 StudentLoanAfterDeductions = 0;
+              }
+              takeOffLoan = StudentLoanAfterDeductions;
+            var takeOffLoanYearToTwoPlaces = parseFloat(Math.round(takeOffLoan * 100) / 100).toFixed(2);
+            
+            //work out monthly
+            var takeOffLoanMonth = takeOffLoan / 12;
+            var takeOffLoanMonthToTwoPlaces = parseFloat(Math.round(takeOffLoanMonth * 100) / 100).toFixed(2);
+            //set the monthly value with formatting
+            var takeOffLoanMonthWithPound = "-£" + takeOffLoanMonthToTwoPlaces;
+            //var takeOffLoanWithPoundAndComa = takeOffLoanMonthWithPound.slice(0, 2) + "," + takeOffLoanMonthWithPound.slice(2);
+            if (takeOffLoanYearToTwoPlaces != 0)
+            {
+               $("#studentLoanMonth").text(takeOffLoanMonthWithPound);
+               $("#studentLoanYear").text("-£" + takeOffLoanYearToTwoPlaces);
+            }
+            else
+            {
+               $("#studentLoanMonth").text("£0");
+               $("#studentLoanYear").text("£0");
+            }
+            
+           }
+         if ($("#cbPension").is(':checked')) {
+                $("#pensionYear").css("text-decoration", "none");
+                $("#pensionMonth").css("text-decoration", "none");
+                $("#pensionWeek").css("text-decoration", "none");
+                
+                var getYearWithoutFormat = $("#grossYearly").text();
+                var takeBeforeCalc = parseFloat(getYearWithoutFormat.replace(",","").replace("£",""));
+                //alert(takeBeforeCalc);
+
+                var getYearNiWithoutFormat = $("#niYearly").text();
+                var theYearlyNi = parseFloat(getYearNiWithoutFormat.replace(",","").replace("£","").replace("-",""));
+                //alert(theYearlyNi);
+
+                var getYearPensionWithoutFormat = $("#pensionYear").text();
+                var theYearlyPension = parseFloat(getYearPensionWithoutFormat.replace(",","").replace("£","").replace("-",""));
+                //alert(theYearlyPension);
+
+                var takeMeOff = theYearlyNi;// + theYearlyPension;
+                //alert(takeMeOff);
+
+                //alert(takeBeforeCalc + " + " + takeMeOff);
+                //so now I need to take off the pension second and ni last
+                takeMeOff = takeOffLoan + takeMeOff;
+                CalculateTax(takeBeforeCalc, theYearlyPension, takeMeOff);
+
+            } else {
+                $("#pensionYear").css("text-decoration", "line-through");
+                $("#pensionMonth").css("text-decoration", "line-through");
+                $("#pensionWeek").css("text-decoration", "line-through");
+
+                var getYearWithoutFormat = $("#grossYearly").text();
+                var takeBeforeCalc = parseFloat(getYearWithoutFormat.replace(",","").replace("£",""));
+                takeBeforeCalc = takeBeforeCalc;
+                //var takeBeforeCalc = parseFloat(getYearWithoutFormat.replace(",","").replace("£","")) - takeOffLoan;
+                //alert(takeBeforeCalc);
+
+                var getYearNiWithoutFormat = $("#niYearly").text();
+                var theYearlyNi = parseFloat(getYearNiWithoutFormat.replace(",","").replace("£","").replace("-",""));
+                //alert(theYearlyNi);
+
+                var takeMeOff = theYearlyNi;
+                //alert(takeMeOff);
+
+                //alert(takeBeforeCalc + " + " + takeMeOff);
+                takeMeOff = takeMeOff + takeOffLoan;
+                CalculateTax(takeBeforeCalc, 0, takeMeOff);
+
+            }
+           var loanType = this.value;
+           var getYearWithoutFormat = $("#grossYearly").text();
+           var takeBeforeCalc = parseFloat(getYearWithoutFormat.replace(",","").replace("£",""));
+        });
+
+        $(".getSixth").click(function(){
+            //alert(GrossWithPound);
+            var GrossWithPound = $(this).parent().closest('td').prev('.21to22').text();
+            Calculate(GrossWithPound);
+        });
+
+        $(".getEighth").click(function(){
+            //alert(GrossWithPound);
+            var GrossWithPound = $(this).parent().closest('td').prev('.22to23').text();
+            Calculate(GrossWithPound);
+        });
+
+        $(".getTenth").click(function () {
+            //alert(GrossWithPound);
+            var GrossWithPound = $(this).parent().closest('td').prev('.23to24').text();
+            Calculate(GrossWithPound);
+        });
+
+        function Calculate(GrossWithPound) {
+
+            //get the yearly value for calculations
+            var GrossYearlyWithoutPound = GrossWithPound.replace(",","").replace("£","");
+            //set the yearly value with formatting
+            $("#grossYearly").text(GrossWithPound + ".00");
+
+            //divide the yearly value by 12 to get the monthly value
+            var GrossMonthlyWithoutPound = GrossYearlyWithoutPound / 12;
+            //get the monthly value for calculations
+            var GrossMonthlyToTwoPlaces = parseFloat(Math.round(GrossMonthlyWithoutPound * 100) / 100).toFixed(2);
+            //set the monthly value with formatting
+            var GrossMonthlyWithPound = "£" + GrossMonthlyToTwoPlaces;
+            var GrossMonthlyWithPoundAndComa = GrossMonthlyWithPound.slice(0, 2) + "," + GrossMonthlyWithPound.slice(2);
+            $("#grossMonthly").text(GrossMonthlyWithPoundAndComa);
+
+            //get the weekly value for calculations
+            var GrossWeeklyWithoutPound = GrossYearlyWithoutPound / 52.1429;
+
+            $("#grossWeekly").text("£" + parseFloat(Math.round(GrossWeeklyWithoutPound * 100) / 100).toFixed(2));
+
+            ////////////////////////calculate pension///////////////////////////
+
+            if (GrossYearlyWithoutPound >= 13247.00) {
+                pensionPercentage = 5.7;
+            }
+
+            if (GrossYearlyWithoutPound >= 16832.00) {
+                pensionPercentage = 6.1;
+            }
+
+            if (GrossYearlyWithoutPound >= 22879.00) {
+                pensionPercentage = 6.8;
+            }
+
+            if (GrossYearlyWithoutPound >= 23949.00) {
+                pensionPercentage = 7.7;
+            }
+
+            if (GrossYearlyWithoutPound >= 28224.00) {
+                pensionPercentage = 8.8;
+            }
+
+            if (GrossYearlyWithoutPound >= 29180.00) {
+                pensionPercentage = 9.8;
+            }
+
+            if (GrossYearlyWithoutPound >= 43806.00) {
+                pensionPercentage = 10;
+            }
+
+            if (GrossYearlyWithoutPound >= 49246.00) {
+                pensionPercentage = 11.6;
+            }
+
+            if (GrossYearlyWithoutPound >= 56164.00) {
+                pensionPercentage = 12.5;
+            }
+
+            if (GrossYearlyWithoutPound >= 72031.00) {
+                pensionPercentage = 13.5;
+            }
+
+            var pensionYear = GrossYearlyWithoutPound / 100 * pensionPercentage;
+            var pensionYearToTwoPlaces = "-£" + parseFloat(Math.round(pensionYear * 100) / 100).toFixed(2);
+
+            var pensionMonth = GrossMonthlyWithoutPound / 100 * pensionPercentage;
+            var pensionMonthToTwoPlaces = "-£" + parseFloat(Math.round(pensionMonth * 100) / 100).toFixed(2);
+
+            var pensionWeek = GrossWeeklyWithoutPound / 100 * pensionPercentage;
+            var pensionWeekToTwoPlaces = "-£" + parseFloat(Math.round(pensionWeek * 100) / 100).toFixed(2);
+
+            $("#pensionPercentage").text(pensionPercentage);
+            $("#pensionYear").text(pensionYearToTwoPlaces);
+            $("#pensionMonth").text(pensionMonthToTwoPlaces);
+            $("#pensionWeek").text(pensionWeekToTwoPlaces);
+
+            //get the weekly value for calculations
+            //var GrossWeekly = GrossMonthlyToTwoPlaces / 4;
+            var GrossWeekly = GrossYearlyWithoutPound / 52.1429
+            var GrossWeeklyToTwoPlaces = parseFloat(Math.round(GrossWeekly * 100) / 100).toFixed(2);
+
+            ////////////////////////calculate national insurance///////////////////////////
+            //https://www.which.co.uk/money/tax/national-insurance/national-insurance-rates-ajg9u9p48f2f
+
+            //you don't pay anything on the first £12,570
+            var periodicNiDeductions = GrossYearlyWithoutPound;
+            var niDeductionsAtThisPoint;
+            var totalNiToPay = 0;
+            var niRate = 'basic';
+
+            if(periodicNiDeductions > 12570)
+            {
+                //no ni
+                periodicNiDeductions = periodicNiDeductions - 12570;
+                //alert('2. minus 11850 = ' + periodicTaxDeductions);
+            }
+            else
+            {
+                //no ni
+                periodicNiDeductions - periodicNiDeductions;
+            }
+
+            //first basic ni rate
+            //£12570 to £50270 = normal rate of 13.25% so if the remaining amount is 37700 or higher
+            //if the amount left is more than 37700 (50270 - 12570)
+            if(periodicNiDeductions > 37700)
+            {
+                //deduct this from ni
+                niDeductionsAtThisPoint = 37700 / 100 * 13.25;
+                totalNiToPay = totalNiToPay + niDeductionsAtThisPoint;
+
+                //alert('3. over 37700 left so minus this = ' + periodicNiDeductions + ' and ni to pay is ' + totalNiToPay);
+
+                //take off 37700 for the next ni band
+                periodicNiDeductions = periodicNiDeductions - 37700;
+                //higher ni rate
+                niRate = 'higher';
+            }
+
+            if(periodicNiDeductions > 0 && periodicNiDeductions < 37700)
+            {
+                //the total ni to pay is 13.25% on the amount left over
+                niDeductionsAtThisPoint = periodicNiDeductions / 100 * 13.25;
+                totalNiToPay = totalNiToPay + niDeductionsAtThisPoint;
+
+                //alert('3. between 0 and 37700 = ' + periodicTaxDeductions + ' and tax to pay is ' + totalTaxToPay);
+
+                //take off everything for the next tax band (which won't be counted)
+                periodicNiDeductions = periodicNiDeductions - periodicNiDeductions;
+                //basic ni rate
+                //niRate = 'basic';
+            }
+
+            //if any more is left over pay 3.25% on it
+            if(periodicNiDeductions > 0)
+            {
+                //the total ni to pay is 3.25% on the amount left over
+                niDeductionsAtThisPoint = periodicNiDeductions / 100 * 3.25;
+                totalNiToPay = totalNiToPay + niDeductionsAtThisPoint;
+
+                niRate = 'higher';
+            }
+
+            $("#niRate").text(niRate);
+
+            var NiPerYearToPay = totalNiToPay;
+            var NiPerMonthToPay = totalNiToPay / 12;
+            var NiPerWeekToPay = NiPerMonthToPay / 4;
+
+            //alert(NiPerWeekToPay + " month " + NiPerMonthToPay);
+            var NiPerWeekToPayToTwoPlaces = parseFloat(Math.round(NiPerWeekToPay * 100) / 100).toFixed(2);
+            var NiPerMonthToPayToTwoPlaces = parseFloat(Math.round(NiPerMonthToPay * 100) / 100).toFixed(2);
+            var NiPerYearToPayToTwoPlaces = parseFloat(Math.round(NiPerYearToPay * 100) / 100).toFixed(2);
+            //£22,238
+            $("#niWeekly").text("-£" + Number(NiPerWeekToPayToTwoPlaces).toLocaleString('en'));
+            $("#niMonthly").text("-£" + Number(NiPerMonthToPayToTwoPlaces).toLocaleString('en'));
+            $("#niYearly").text("-£" + Number(NiPerYearToPayToTwoPlaces).toLocaleString('en'));
+
+            ////////////////////////calculate tax///////////////////////////
+            var pensionAmount = 0;
+            if ($('#cbPension').is(':checked')) {
+                pensionAmount = pensionYear;
+            } else {
+                pensionAmount = 0;
+            }
+
+            var takeOffLoan = 0;
+           if ($("#ddStudentLoan").val() == 'pre2012')
+           {
+              ////pre 2012 calc////
+              //takeOffLoan = 60;
+              var getYearWithoutFormat = $("#grossYearly").text();
+              var takeBeforeCalc = parseFloat(getYearWithoutFormat.replace(",","").replace("£",""))
+              if (takeBeforeCalc > pre2012StudentLoanThreshold)
+              {
+                 StudentLoanOverThreshold = takeBeforeCalc - pre2012StudentLoanThreshold;
+                 takeOffLoan = StudentLoanOverThreshold / 100 * pre2012StudentLoanPercent;
+              }
+           }
+           if ($("#ddStudentLoan").val() == 'post2012')
+           {
+              ////post 2012 calc////
+              //takeOffLoan = 120;
+              var getYearWithoutFormat = $("#grossYearly").text();
+              var takeBeforeCalc = parseFloat(getYearWithoutFormat.replace(",","").replace("£",""))
+              if (takeBeforeCalc > post2012StudentLoanThreshold)
+              {
+                 StudentLoanOverThreshold = takeBeforeCalc - post2012StudentLoanThreshold;
+                 takeOffLoan = StudentLoanOverThreshold / 100 * post2012StudentLoanPercent;
+              }
+           }
+           if (takeOffLoan == 0)
+           {
+              $("#studentLoanYear").text("£0");
+              $("#studentLoanMonth").text("£0");
+           }
+           else
+           {
+              var takeOffLoanYearToTwoPlaces = parseFloat(Math.round(takeOffLoan * 100) / 100).toFixed(2);
+              var takeOffLoanYearWithPound = "-£" + takeOffLoanYearToTwoPlaces;
+              $("#studentLoanYear").text(takeOffLoanYearWithPound);
+              var takeOffLoanMonth = takeOffLoan / 12;
+              var takeOffLoanMonthToTwoPlaces = parseFloat(Math.round(takeOffLoanMonth * 100) / 100).toFixed(2);
+              var takeOffLoanMonthWithPound = "-£" + takeOffLoanMonthToTwoPlaces;
+              $("#studentLoanMonth").text(takeOffLoanMonthWithPound);
+           }
+
+            var deductions = pensionAmount; //+ NiPerYearToPay;
+
+            //just test stuff
+            var theAmountWithoutDeductions = GrossYearlyWithoutPound - deductions;
+            //alert("Pension: " + pensionAmount + " NI: " + NiPerYearToPay + " Deductions: " + deductions + " Total minus deductions: " + theAmountWithoutDeductions)
+
+            //alert(NiPerYearToPay + ' vs ' + NiPerYearToPayToTwoPlaces);
+  			NiPerYearToPay = NiPerYearToPay + takeOffLoan;
+            CalculateTax(GrossYearlyWithoutPound, deductions, NiPerYearToPay);
+        }
+
+        function CalculateTax(yearly, deductions, nationalInsuranceToDeduct) {
+            
+            //2020 tax rates
+            var totalMinusDeductions = yearly - deductions;
+            var periodicTaxDeductions = totalMinusDeductions;
+            var afterTax = 0;
+            var taxDeductionsAtThisPoint;
+            var deductFromTax = 0;
+            var totalTaxToPay = 0;
+            var taxRate = 'none';
+
+            //alert('1. starting amount after ni and pension: ' + periodicTaxDeductions)
+            
+            //up to 12570 no tax
+            if(periodicTaxDeductions > 12570)
+            {
+                //no tax
+                var beforeDeductions = periodicTaxDeductions;
+                periodicTaxDeductions = periodicTaxDeductions - 12570;
+                //alert('2. ' + beforeDeductions + ' - 12570 = ' + periodicTaxDeductions);
+            }
+            else
+            {
+                //no tax
+                periodicTaxDeductions = periodicTaxDeductions - periodicTaxDeductions;
+            }
+            
+            //first basic tax rate
+            //12570 to 50270 = normal rate of 20% so if the remaining amount is 37700 or higher
+            //if the amount left is more than 37700 (50270 - 12570)
+            if(periodicTaxDeductions > 37700)
+            {
+                var beforeDeductions = periodicTaxDeductions;
+
+                //deduct this from tax
+                taxDeductionsAtThisPoint = 37700 / 100 * 20;
+                totalTaxToPay = totalTaxToPay + taxDeductionsAtThisPoint;
+                //take off 37700 for the next tax band
+                periodicTaxDeductions = periodicTaxDeductions - 37700;
+                //basic tax rate
+                taxRate = 'basic';
+
+                //alert('3. over 37700 left so basic tax which is basic tax rate so minus this = ' + periodicTaxDeductions + ' and tax to pay is ' + totalTaxToPay);
+            }
+
+            //if the amount left is more than 0 and less than 37700
+            if(periodicTaxDeductions > 0 && periodicTaxDeductions < 37700)
+            {
+                //the total tax to pay is 20% on the amount left over
+                taxDeductionsAtThisPoint = periodicTaxDeductions / 100 * 20;
+                totalTaxToPay = totalTaxToPay + taxDeductionsAtThisPoint;
+
+                //alert('3. between 0 and 37700 = ' + periodicTaxDeductions + ' / 100 * 20 = ' + totalTaxToPay);
+
+                //take off everything for the next tax band (which won't be counted)
+                periodicTaxDeductions = periodicTaxDeductions - periodicTaxDeductions;
+                //basic tax rate
+                taxRate = 'basic';
+            }
+
+            //second higher tax rate
+            //50000 to 150000 = higher rate of 40% so if the remaining amount is 100000 or higher
+            //if the amount left is more than 100000 (150000 - 50000)
+            if(periodicTaxDeductions > 100000)
+            {
+                //deduct this from tax
+                taxDeductionsAtThisPoint = 100000 / 100 * 40;
+                totalTaxToPay = totalTaxToPay + taxDeductionsAtThisPoint;
+                //take off 100000 for the next tax band
+                periodicTaxDeductions = periodicTaxDeductions - 100000;
+                //higher tax rate
+                taxRate = 'higher';
+
+                //alert('4. over 103650 left so minus this = ' + periodicTaxDeductions + ' and tax to pay is ' + totalTaxToPay);
+            }
+
+            //if the amount left is more than 0 and less than 100000
+            if(periodicTaxDeductions > 0 && periodicTaxDeductions < 100000)
+            {
+                //the total tax to pay is 40% on the amount left over
+                taxDeductionsAtThisPoint = periodicTaxDeductions / 100 * 40;
+                totalTaxToPay = totalTaxToPay + taxDeductionsAtThisPoint;
+
+                //alert('4. between 0 and 100000 = ' + periodicTaxDeductions + ' and tax to pay is ' + totalTaxToPay);
+
+                //take off everything for the next tax band (which won't be counted)
+                periodicTaxDeductions = periodicTaxDeductions - periodicTaxDeductions;
+                //higher tax rate
+                taxRate = 'higher';
+            }
+
+            $("#taxRate").text(taxRate);
+
+            var overallAfterTax = totalMinusDeductions - totalTaxToPay - nationalInsuranceToDeduct;
+
+            //alert('total. before tax: ' + totalMinusDeductions + ' - ' + totalTaxToPay + ' = ' + overallAfterTax);
+
+            totalTaxToPayToTwoPlaces = parseFloat(Math.round(totalTaxToPay * 100) / 100).toFixed(2);
+            $("#taxYearly").text("-£" + Number(totalTaxToPayToTwoPlaces).toLocaleString('en'));
+            var totalTaxToPayMonthly = totalTaxToPay / 12;
+            var totalTaxToPayMonthlyToTwoPlaces = parseFloat(Math.round(totalTaxToPayMonthly * 100) / 100).toFixed(2);
+            $("#taxMonthly").text("-£" + Number(totalTaxToPayMonthlyToTwoPlaces).toLocaleString('en'));
+            var totalTaxToPayWeekly = totalTaxToPay / 52.1429;
+            var totalTaxToPayWeeklyToTwoPlaces = parseFloat(Math.round(totalTaxToPayWeekly * 100) / 100).toFixed(2);
+            $("#taxWeekly").text("-£" + Number(totalTaxToPayWeeklyToTwoPlaces).toLocaleString('en'));
+
+            totalYearlyToPayToTwoPlaces = parseFloat(Math.round(overallAfterTax * 100) / 100).toFixed(2);
+            $("#totalYearly").text("£" + Number(totalYearlyToPayToTwoPlaces).toLocaleString('en'));
+            var totalOverallToPayMonthly = overallAfterTax / 12;
+            var totalOverallToPayMonthlyToTwoPlaces = parseFloat(Math.round(totalOverallToPayMonthly * 100) / 100).toFixed(2);
+            $("#totalMonthly").text("£" + Number(totalOverallToPayMonthlyToTwoPlaces).toLocaleString('en'));
+            var totalOverallToPayWeekly = overallAfterTax / 52.1429;
+            var totalOverallToPayWeeklyToTwoPlaces = parseFloat(Math.round(totalOverallToPayWeekly * 100) / 100).toFixed(2);
+            $("#totalWeekly").text("£" + Number(totalOverallToPayWeeklyToTwoPlaces).toLocaleString('en'));
+        }
+        });
+</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</body>
+</html>
